@@ -1,0 +1,4 @@
+pydantic
+pandas
+numpy
+requests
