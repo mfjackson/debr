@@ -1,4 +1,4 @@
-# Branch Data Engineering Project (debr)
+# debr - a basic Python API wrapper for randomuser.me
 
 ## 0. How to use
 
