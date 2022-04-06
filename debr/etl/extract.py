@@ -6,7 +6,10 @@ from debr.constructors.types import Users, Timezones, Media, AltIDs, Logins, Cou
 
 
 def random_user_data_to_csv(df: pd.DataFrame, data_class) -> None:
-    output_df = pd.DataFrame([x for x in df.apply(lambda row: data_class.from_dict(row.to_dict()), axis=1)])
+    output_df = pd.DataFrame(
+        list(df.apply(lambda row: data_class.from_dict(row.to_dict()), axis=1))
+    )
+
 
     output_df.to_csv(f"../../data/{data_class.__name__.lower()}.csv", index=False)
 
