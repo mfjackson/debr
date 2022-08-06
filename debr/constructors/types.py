@@ -101,10 +101,7 @@ class AltIDs(BaseModel):
 
     @validator('*', pre=True)
     def check_if_none(cls, df_value, field):
-        if pd.isna(df_value):
-            return field.default
-
-        return df_value
+        return field.default if pd.isna(df_value) else df_value
 
 
 class Timezones(BaseModel):
